@@ -28,7 +28,7 @@ lbm run quantum --statistic BE --h 1.0 --nx 201 --re 20 --u-inf 0.1 --t-inf 0.5 
 lbm run quantum --statistic MB --h 1.0 --nx 201 --re 20 --u-inf 0.1 --t-inf 0.5 --out results/quantum-mb/
 ```
 
-`--h` is the Planck/degeneracy parameter in `ideal_gases.find_fugacity`; free-stream fugacity is \(z_\infty=\mathrm{find\_fugacity}(\rho_\infty,T_\infty,h,\eta)\`. Use `MB` to cross-check against classical (same hydrodynamics when \(\chi\equiv 1\)).
+`--h` is the Planck/degeneracy parameter in `ideal_gases.find_fugacity`; free-stream fugacity is $z_\infty=\mathrm{find\_fugacity}(\rho_\infty,T_\infty,h,\eta)$. Use `MB` to cross-check against classical (same hydrodynamics when $\chi\equiv 1$).
 
 Useful shared flags:
 
@@ -47,22 +47,22 @@ uv run pytest
 
 ### Classical (`lbm.classical`)
 
-- Lattice: D2Q9, reference \(c_s^2 = 1/3\)
-- Equilibrium: Shan-He N=2 Hermite Maxwellian with variable \(T\)
-- EOS: \(P = \rho T\)
-- Collision: BGK with \(\tau = \nu/T + 1/2\)
+- Lattice: D2Q9, reference $c_s^2 = 1/3$
+- Equilibrium: Shan-He N=2 Hermite Maxwellian with variable $T$
+- EOS: $P = \rho T$
+- Collision: BGK with $\tau = \nu/T + 1/2$
 
 ### Quantum (`lbm.quantum`)
 
 - Same D2Q9 / N=2 skeleton
-- Equilibrium: Yang-Hung with factor \(\chi(z)=g_{5/2}(z)/g_{3/2}(z)\)
-- Collision: BGK with \(\tau = \nu/(T\chi) + 1/2\)
-- Fugacity from `ideal_gases` (3D density law, spatial energy \(D=2\))
+- Equilibrium: Yang-Hung with factor $\chi(z)=g_{5/2}(z)/g_{3/2}(z)$
+- Collision: BGK with $\tau = \nu/(T\chi) + 1/2$
+- Fugacity from `ideal_gases` (3D density law, spatial energy $D=2$)
 
 ### Shared
 
 - Domain: square far-field box; cylinder at center
-- Outer boundary: free-stream \(f^{\mathrm{eq}}\) on all four edges
+- Outer boundary: free-stream $f^{\mathrm{eq}}$ on all four edges
 - Cylinder: fullway bounce-back
 
 
